@@ -1,5 +1,7 @@
 import config from '@payload-config'
+
 import { getPayload } from 'payload'
+
 import type { IconType } from 'react-icons'
 import { CiMobile1 } from 'react-icons/ci'
 import { MdOutlineColorize } from 'react-icons/md'
@@ -12,6 +14,7 @@ import Features1 from '@/components/sections/Features/Features1'
 import Features2 from '@/components/sections/Features/Features2'
 import { HeroSection } from '@/components/sections/hero-section'
 import { TrustedCompanies } from '@/components/sections/trusted-companies'
+
 import {
     cards1Defaults,
     contact1Defaults,
@@ -20,19 +23,52 @@ import {
     trustedCompaniesDefaults,
 } from '@/content/home-defaults'
 
-const cardIcons: Record<string, IconType> = { TbWorld, CiMobile1, MdOutlineColorize }
+const cardIcons: Record<string, IconType> = {
+    TbWorld,
+    CiMobile1,
+    MdOutlineColorize,
+}
 
 export default async function Home() {
     const payload = await getPayload({ config })
 
     const [heroResult, companiesResult, features1Result, cards1Result, features2Result, contact1Result] =
         await Promise.all([
-            payload.find({ collection: 'hero', limit: 1 }),
-            payload.find({ collection: 'trusted-companies', limit: 1 }),
-            payload.find({ collection: 'features1', limit: 1 }),
-            payload.find({ collection: 'cards1', limit: 1 }),
-            payload.find({ collection: 'features2', limit: 1 }),
-            payload.find({ collection: 'contact1', limit: 1 }),
+            payload.find({
+                collection: 'hero',
+                limit: 1,
+                depth: 1,
+            }),
+
+            payload.find({
+                collection: 'trusted-companies',
+                limit: 1,
+                depth: 1,
+            }),
+
+            payload.find({
+                collection: 'features1',
+                limit: 1,
+                depth: 1,
+            }),
+
+            payload.find({
+                collection: 'cards1',
+                limit: 1,
+                depth: 1,
+            }),
+
+            payload.find({
+                collection: 'features2',
+                limit: 1,
+                depth: 1,
+            }),
+
+            payload.find({
+                collection: 'contact1',
+                limit: 1,
+                depth: 1,
+            }),
         ])
 
     const hero = heroResult.docs[0]
@@ -41,11 +77,14 @@ export default async function Home() {
     const services = cards1Result.docs[0]
     const results = features2Result.docs[0]
     const contact = contact1Result.docs[0]
+
     const solutionItems = solutions?.features1?.length ? solutions.features1 : features1Defaults.features1
+
     const serviceItems = services?.cards?.length ? services.cards : cards1Defaults.cards
 
     return (
         <>
+            {/* HERO */}
             <HeroSection
                 titlePrimary={hero?.titlePrimary || 'Software sob medida'}
                 title={
@@ -66,6 +105,7 @@ export default async function Home() {
                 button2link={hero?.button2link || '#trabalho'}
             />
 
+            {/* EMPRESAS */}
             <TrustedCompanies
                 title={companies?.title || trustedCompaniesDefaults.title}
                 companyLogos={
@@ -73,13 +113,17 @@ export default async function Home() {
                         ? companies.companyLogos.map((item) => ({
                               id: item.id,
                               logo: item.logo,
+
                               img: typeof item.img === 'object' && item.img?.url ? item.img.url : null,
+
                               alt: item.alt,
                               width: item.width,
                           }))
                         : trustedCompaniesDefaults.companyLogos
                 }
             />
+
+            {/* SOLUÇÕES */}
             <Features1
                 titlePrimary={solutions?.titlePrimary || features1Defaults.titlePrimary}
                 title={solutions?.title || features1Defaults.title}
@@ -95,16 +139,22 @@ export default async function Home() {
                 buttonText={solutions?.buttonText || features1Defaults.buttonText}
             />
 
+            {/* SERVIÇOS */}
             <Cards1
                 titlePrimary={services?.titlePrimary || cards1Defaults.titlePrimary}
                 title={services?.title || cards1Defaults.title}
                 desc={services?.desc || cards1Defaults.desc}
                 cards={serviceItems.map((card) => {
                     const Icon = cardIcons[card.icon] || TbWorld
-                    return { ...card, icon: <Icon size={30} color="#3494F9" /> }
+
+                    return {
+                        ...card,
+                        icon: <Icon size={30} color="#3494F9" />,
+                    }
                 })}
             />
 
+            {/* RESULTADOS */}
             <Features2
                 title={results?.title || features2Defaults.title}
                 desc={results?.desc || features2Defaults.desc}
@@ -114,6 +164,8 @@ export default async function Home() {
                 buttonText={results?.buttonText || features2Defaults.buttonText}
                 buttonLink={results?.buttonLink || features2Defaults.buttonLink}
             />
+
+            {/* CONTATO */}
             <Contact1
                 titlePrimary={contact?.titlePrimary || contact1Defaults.titlePrimary}
                 title={
