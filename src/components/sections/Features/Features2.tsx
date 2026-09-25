@@ -6,7 +6,15 @@ import { NumberTicker } from '@/components/magicui/number-ticker'
 import { FeaturesProps } from '@/components/sections/Features/Features.types'
 import { Button } from '@/components/ui/button'
 
-function Features2({ title, desc, features1, img, metrics, buttonText }: FeaturesProps) {
+function Features2({
+    title,
+    desc,
+    features1,
+    img,
+    metrics,
+    buttonText,
+    buttonLink = '#trabalho',
+}: FeaturesProps) {
     return (
         <section id="features">
             <div className="bg-color-codgray">
@@ -19,31 +27,47 @@ function Features2({ title, desc, features1, img, metrics, buttonText }: Feature
                                     {title}
                                 </h2>
 
-                                <p className="text-base font-normal text-color-frenchgray">{desc}</p>
+                                <p className="text-base font-normal text-color-frenchgray">
+                                    {desc}
+                                </p>
                             </Reveal>
 
                             <div className="flex flex-col gap-2 px-2">
-                                {features1.map((features, index) => (
-                                    <Reveal key={index} delay={0.1 + index * 0.1} distance={16}>
-                                        <CardFeatures2 title={features.title} />
+                                {features1.map((feature, index) => (
+                                    <Reveal
+                                        key={index}
+                                        delay={0.1 + index * 0.1}
+                                        distance={16}
+                                    >
+                                        <CardFeatures2
+                                            title={feature.title}
+                                        />
                                     </Reveal>
                                 ))}
                             </div>
 
-                            <Reveal delay={0.25} className="flex w-full lg:items-start lg:justify-start">
+                            <Reveal
+                                delay={0.25}
+                                className="flex w-full lg:items-start lg:justify-start"
+                            >
                                 <Button
                                     variant="herobuttonsecondary"
                                     size="hero"
                                     asChild
-                                    className="w-full rounded-md bg-color-denim px-6 py-2 text-white hover:bg-color-denim hover:text-black lg:w-fit">
-                                    <Link href="#trabalho">{buttonText}</Link>
+                                    className="w-full rounded-md bg-color-denim px-6 py-2 text-white hover:bg-color-denim hover:text-black lg:w-fit"
+                                >
+                                    <Link href={buttonLink}>
+                                        {buttonText}
+                                    </Link>
                                 </Button>
                             </Reveal>
                         </div>
 
+                        {/* DIREITA */}
                         <Reveal
                             delay={0.12}
-                            className="group flex flex-1 flex-col overflow-hidden rounded-3xl border border-[#212121] bg-[#161616]">
+                            className="group flex flex-1 flex-col overflow-hidden rounded-3xl border border-[#212121] bg-[#161616]"
+                        >
                             <div className="h-[360px] w-full overflow-hidden">
                                 <img
                                     src={img}
@@ -54,17 +78,34 @@ function Features2({ title, desc, features1, img, metrics, buttonText }: Feature
 
                             <div className="grid grid-cols-3 gap-2 px-3 py-8 text-center sm:gap-4 sm:px-6 sm:py-10">
                                 {metrics?.map((metric, index) => {
-                                    const numericValue = metric.value.match(/^(\+?)(\d+)(%?)$/)
+                                    const numericValue =
+                                        metric.value.match(
+                                            /^(\+?)(\d+)(%?)$/,
+                                        )
 
                                     return (
-                                        <Reveal key={index} delay={0.15 + index * 0.1} distance={12} scale={0.94}>
+                                        <Reveal
+                                            key={index}
+                                            delay={0.15 + index * 0.1}
+                                            distance={12}
+                                            scale={0.94}
+                                        >
                                             <p className="text-2xl font-bold text-color-denim sm:text-3xl lg:text-4xl">
                                                 {numericValue ? (
                                                     <NumberTicker
-                                                        value={Number(numericValue[2])}
-                                                        prefix={numericValue[1]}
-                                                        suffix={numericValue[3]}
-                                                        delay={0.25 + index * 0.1}
+                                                        value={Number(
+                                                            numericValue[2],
+                                                        )}
+                                                        prefix={
+                                                            numericValue[1]
+                                                        }
+                                                        suffix={
+                                                            numericValue[3]
+                                                        }
+                                                        delay={
+                                                            0.25 +
+                                                            index * 0.1
+                                                        }
                                                     />
                                                 ) : (
                                                     metric.value

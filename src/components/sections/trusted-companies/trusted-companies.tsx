@@ -1,4 +1,16 @@
 import { Marquee } from '@/components/magicui/marquee'
+import { trustedCompaniesDefaults } from '@/content/home-defaults'
+
+interface TrustedCompaniesProps {
+    title?: string
+    companyLogos?: {
+        id?: string | null
+        logo: string
+        img?: string | null
+        alt: string
+        width: number
+    }[]
+}
 
 // Logos ilustrativos, como na referência. Substitua pelas marcas dos clientes.
 const companyLogos = [
@@ -113,10 +125,13 @@ const companyLogos = [
     },
 ]
 
-export function TrustedCompanies() {
+export function TrustedCompanies({
+    title = trustedCompaniesDefaults.title,
+    companyLogos: logos = trustedCompaniesDefaults.companyLogos,
+}: TrustedCompaniesProps) {
     return (
-        <section aria-label="Empresas que confiam" className="overflow-hidden bg-color-codgray py-24">
-            <h2 className="mb-6 text-center text-xs font-normal text-color-shuttlegray">Empresas que confiam</h2>
+        <section aria-label={title} className="overflow-hidden bg-color-codgray py-24">
+            <h2 className="mb-6 text-center text-xs font-normal text-color-shuttlegray">{title}</h2>
             <Marquee
                 pauseOnHover
                 repeat={2}
@@ -124,19 +139,35 @@ export function TrustedCompanies() {
                 role="group"
                 aria-label="Logos das empresas"
                 className="w-full p-0 text-[#3f4555] outline-offset-4 [--duration:35s] [--gap:2.5rem] focus-visible:outline focus-visible:outline-2 focus-visible:outline-color-denim motion-reduce:overflow-x-auto sm:[--gap:3rem] [&>div]:min-w-full [&>div]:items-center">
-                {companyLogos.map(({ id, width, artwork }) => (
-                    <svg
-                        key={id}
-                        role="img"
-                        aria-label="Logoipsum — logo ilustrativo"
-                        width={width}
-                        height="36"
-                        viewBox={`0 0 ${width} 36`}
-                        fill="currentColor"
-                        className="h-8 shrink-0 font-sans">
-                        {artwork}
-                    </svg>
-                ))}
+                {logos.map(({ id, logo, img, alt, width }, index) => {
+                    if (img) {
+                        return (
+                            <img
+                                key={id || index}
+                                src={img}
+                                alt={alt}
+                                width={width}
+                                height={36}
+                                className="h-8 shrink-0 object-contain"
+                            />
+                        )
+                    }
+
+                    const illustration = companyLogos.find((item) => item.id === logo) || companyLogos[0]
+                    return (
+                        <svg
+                            key={id || index}
+                            role="img"
+                            aria-label={alt}
+                            width={width}
+                            height="36"
+                            viewBox={`0 0 ${illustration.width} 36`}
+                            fill="currentColor"
+                            className="h-8 shrink-0 font-sans">
+                            {illustration.artwork}
+                        </svg>
+                    )
+                })}
             </Marquee>
         </section>
     )

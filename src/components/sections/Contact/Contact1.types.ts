@@ -3,4 +3,5 @@ export interface Contact1Props {
     title: string | React.ReactNode
     desc: string
     buttonText?: string
+    buttonLink?: string
 }

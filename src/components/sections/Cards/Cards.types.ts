@@ -1,4 +1,4 @@
-// CardSection.types.ts
+import type { JSX } from 'react'
 
 export interface CardData {
     icon?: JSX.Element
@@ -19,6 +19,7 @@ export interface CardData {
 }
 export interface CardHighData {
     icon?: JSX.Element
+    titlePrimary?: string
     title: string
     titleApp?: string
     text?: string
@@ -38,7 +39,7 @@ export interface CardHighData {
 
 export interface CardSectionProps {
     titlePrimary?: string
-    title?: string | React.ReactNode
+    title?: string
     desc?: string
     buttonText?: string
     img?: string

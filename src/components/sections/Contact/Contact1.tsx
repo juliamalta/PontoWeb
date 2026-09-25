@@ -5,7 +5,13 @@ import { Reveal } from '@/components/animations/Reveal'
 import { InteractiveHoverButton } from '@/components/magicui/Interactive-HoverButton'
 import { Contact1Props } from '@/components/sections/Contact/Contact1.types'
 
-function Contact1({ titlePrimary, title, desc, buttonText }: Contact1Props) {
+function Contact1({
+    titlePrimary,
+    title,
+    desc,
+    buttonText,
+    buttonLink = 'https://wa.me/5531996398460',
+}: Contact1Props) {
     return (
         <section id="features" className="relative isolate overflow-hidden bg-color-codgray">
             <AmbientGlow />
@@ -34,7 +40,7 @@ function Contact1({ titlePrimary, title, desc, buttonText }: Contact1Props) {
                         delay={0.3}
                         className="flex w-full flex-col gap-3 sm:flex-row sm:items-center sm:justify-center">
                         <InteractiveHoverButton className="rounded-2xl border-color-denim bg-color-denim text-center text-sm text-white hover:text-color-denim">
-                            <Link href="https://wa.me/5531996398460"> {buttonText}</Link>
+                            <Link href={buttonLink}> {buttonText}</Link>
                         </InteractiveHoverButton>
                     </Reveal>
                 </div>

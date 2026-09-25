@@ -1,0 +1,146 @@
+// Carregado apenas pelo layout do Payload. As cores semânticas de status
+// continuam sendo as do tema nativo para preservar erros, alertas e confirmações.
+@layer payload {
+    html[data-theme='dark'] {
+        --pontoweb-primary: #075ad2;
+        --pontoweb-primary-hover: #0d4b9b;
+        --pontoweb-accent: #82d3ff;
+        --pontoweb-focus: #47baff;
+
+        --theme-elevation-0: #111111;
+        --theme-elevation-50: #151515;
+        --theme-elevation-100: #1f1f23;
+        --theme-elevation-150: #3f3f46;
+        --theme-elevation-200: #494951;
+        --theme-elevation-250: #60606b;
+        --theme-elevation-300: #72727e;
+        --theme-elevation-350: #85858f;
+        --theme-elevation-400: #a0a0ab;
+        --theme-elevation-450: #b3b3bd;
+        --theme-elevation-500: #bebec6;
+        --theme-elevation-550: #c6c6cc;
+        --theme-elevation-600: #d3d3d8;
+        --theme-elevation-650: #dddde2;
+        --theme-elevation-700: #e4e4e7;
+        --theme-elevation-750: #ebebee;
+        --theme-elevation-800: #f4f4f5;
+        --theme-elevation-850: #fafafa;
+        --theme-elevation-900: #ffffff;
+        --theme-elevation-950: #ffffff;
+        --theme-elevation-1000: #ffffff;
+
+        --theme-bg: #111111;
+        --theme-text: #f4f4f5;
+        --theme-input-bg: #1b1b1f;
+        --theme-border-color: #34343b;
+        --accessibility-outline: 2px solid var(--pontoweb-focus);
+        --style-radius-s: 6px;
+        --style-radius-m: 10px;
+        --style-radius-l: 16px;
+
+        .btn--style-primary:not(.btn--disabled):not(:disabled) {
+            --bg-color: var(--pontoweb-primary);
+            --color: #ffffff;
+            --hover-bg: var(--pontoweb-primary-hover);
+            --hover-color: #ffffff;
+        }
+
+        .field-type:not(.error) {
+            input:focus-visible,
+            textarea:focus-visible,
+            .rs__control--is-focused {
+                border-color: var(--pontoweb-focus);
+                outline: var(--accessibility-outline);
+                outline-offset: 2px;
+            }
+        }
+
+        .nav__link {
+            border-radius: var(--style-radius-s);
+
+            &:hover,
+            &.active,
+            &:has(.nav__link-indicator) {
+                color: var(--pontoweb-accent);
+            }
+        }
+
+        .nav__link-indicator {
+            background: var(--pontoweb-focus);
+        }
+
+        .card--has-onclick:hover {
+            border-color: var(--pontoweb-primary);
+        }
+
+        .step-nav__home:has(.pontoweb-admin-icon) {
+            width: 108px;
+            height: 36px;
+            flex-shrink: 0;
+        }
+
+        .template-minimal {
+            min-height: 100svh;
+            background: radial-gradient(ellipse at 50% 0%, rgb(7 90 210 / 14%), transparent 55%), var(--theme-bg);
+        }
+
+        .template-minimal--width-normal .template-minimal__wrap {
+            padding: clamp(24px, 4vw, 40px);
+            border: 1px solid var(--theme-border-color);
+            border-radius: 24px;
+            background: var(--theme-elevation-50);
+            box-shadow: 0 24px 80px rgb(0 0 0 / 30%);
+        }
+
+        .login__brand {
+            margin-bottom: 32px;
+        }
+
+        .login__form {
+            > a {
+                color: var(--pontoweb-accent);
+                text-underline-offset: 4px;
+
+                &:hover {
+                    color: #ffffff;
+                }
+            }
+
+            .btn--style-primary {
+                width: 100%;
+                min-height: 44px;
+                margin-bottom: 0;
+            }
+        }
+
+        .pontoweb-admin-brand {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            max-width: 100%;
+        }
+
+        .pontoweb-admin-brand__logo {
+            display: block;
+            width: 280px;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .pontoweb-admin-brand__caption {
+            color: #c6c6cc;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.16em;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .pontoweb-admin-icon {
+            display: block;
+            width: 108px;
+            height: auto;
+        }
+    }
+}

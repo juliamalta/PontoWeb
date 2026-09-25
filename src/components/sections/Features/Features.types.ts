@@ -4,7 +4,8 @@ export interface FeaturesProps {
     desc?: string
     features1: featuresData[]
     buttonText: string
-    img?: string
+    buttonLink?: string
+    img: string
     metrics?: FeatureMetric[]
 }
 
@@ -13,6 +14,7 @@ export interface featuresData {
     desc?: string
     isLast?: boolean
 }
+
 export type FeatureMetric = {
     value: string
     title: string

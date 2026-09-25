@@ -2,12 +2,12 @@ import type { Metadata } from 'next'
 // eslint-disable-next-line camelcase
 import { Inter, Plus_Jakarta_Sans } from 'next/font/google'
 
-import './globals.css'
+import '../globals.css'
 
 import { Toaster } from 'sonner'
 import { configs } from '@/configs'
 import { cn } from '@/lib/utils'
-import LogoImage from '../../public/images/logo.png'
+import LogoImage from '../../../public/images/logo.png'
 
 import NavigationHeader from '@/components/sections/Navigations/NavigationHeader'
 import { Footer } from '@/components/sections/Footer'
@@ -28,7 +28,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 export const metadata: Metadata = configs.metadata
 
 type RootLayoutProps = React.PropsWithChildren
-export const info = [
+const info = [
     {
         title: 'Services',
         items: [
