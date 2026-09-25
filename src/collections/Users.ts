@@ -1,18 +1,18 @@
-import type { CollectionConfig } from "payload";
+import type { CollectionConfig } from 'payload'
 
 export const Users: CollectionConfig = {
-  slug: "users",
+    slug: 'users',
 
-  auth: true,
+    auth: true,
 
-  admin: {
-    useAsTitle: "email",
-  },
-
-  fields: [
-    {
-      name: "name",
-      type: "text",
+    admin: {
+        useAsTitle: 'email',
     },
-  ],
-};
+
+    fields: [
+        {
+            name: 'name',
+            type: 'text',
+        },
+    ],
+}

@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import * as React from 'react'
 import { useState } from 'react'
+import { FaWhatsapp } from 'react-icons/fa'
 
 import { Button } from '@/components/ui/button'
 import {
@@ -17,7 +18,6 @@ import {
 import { cn } from '@/lib/utils'
 
 import { NavigationHeaderProps } from './NavigationHeader.types'
-import { FaWhatsapp } from 'react-icons/fa'
 
 const ListItem = React.forwardRef<React.ElementRef<'a'>, React.ComponentPropsWithoutRef<'a'>>(
     ({ className, title, ...props }, ref) => {
@@ -114,7 +114,7 @@ function NavigationHeader({ logo, navs, buttonLink }: NavigationHeaderProps) {
 
             {/* Mobile Menu */}
             <div
-                className={`fixed bottom-0 left-0 top-0 z-50 w-4/6 max-w-xs transform bg-color-codgray transition-transform duration-300 ease-in-out ${
+                className={`fixed inset-y-0 left-0 z-50 w-4/6 max-w-xs bg-color-codgray transition-transform duration-300 ease-in-out${
                     isNavOpen ? 'translate-x-0' : '-translate-x-full'
                 }`}>
                 <nav className="relative flex h-full flex-col justify-between overflow-y-auto p-6">

@@ -20,8 +20,7 @@ export function HeroSection({
         <>
             <section
                 id="inicio"
-                className="relative isolate mx-auto overflow-hidden bg-color-codgray bg-cover bg-center px-2 py-16 sm:py-44"
-            >
+                className="relative isolate mx-auto overflow-hidden bg-color-codgray bg-cover bg-center px-2 py-16 sm:py-44">
                 <AmbientGlow />
 
                 <div className="container relative flex flex-col gap-8">
@@ -38,51 +37,30 @@ export function HeroSection({
                                         style={{
                                             backgroundColor: 'rgba(7, 90, 210, 0.1)',
                                         }}
-                                        className="flex items-center rounded-2xl py-2 pl-9 pr-4 text-base font-semibold leading-none text-white"
-                                    >
+                                        className="flex items-center rounded-2xl py-2 pl-9 pr-4 text-base font-semibold leading-none text-white">
                                         {titlePrimary}
                                     </HyperText>
                                 </div>
                             </Reveal>
 
-                            <Reveal
-                                delay={0.12}
-                                className="w-full lg:w-2/3 2xl:w-2/4"
-                            >
-                                <h1 className="text-3xl font-normal text-white sm:text-center md:text-6xl">
-                                    {title}
-                                </h1>
+                            <Reveal delay={0.12} className="w-full lg:w-2/3 2xl:w-2/4">
+                                <h1 className="text-3xl font-normal text-white sm:text-center md:text-6xl">{title}</h1>
                             </Reveal>
 
-                            <Reveal
-                                delay={0.24}
-                                className="w-full md:w-2/3 lg:w-2/4"
-                            >
-                                <p className="text-base text-color-frenchgray sm:text-center">
-                                    {desc}
-                                </p>
+                            <Reveal delay={0.24} className="w-full md:w-2/3 lg:w-2/4">
+                                <p className="text-base text-color-frenchgray sm:text-center">{desc}</p>
                             </Reveal>
                         </div>
 
                         <Reveal
                             delay={0.36}
-                            className="flex w-full flex-col gap-3 sm:flex-row sm:items-center sm:justify-center"
-                        >
+                            className="flex w-full flex-col gap-3 sm:flex-row sm:items-center sm:justify-center">
                             <InteractiveHoverButton className="rounded-2xl border-color-denim bg-color-denim text-center text-sm text-white hover:text-color-denim">
-                                <Link href={button1link}>
-                                    {button1text}
-                                </Link>
+                                <Link href={button1link}>{button1text}</Link>
                             </InteractiveHoverButton>
 
-                            <Button
-                                variant="herobuttonsecondary"
-                                size="hero"
-                                asChild
-                                className="rounded-2xl text-sm"
-                            >
-                                <Link href={button2link}>
-                                    {button2text}
-                                </Link>
+                            <Button variant="herobuttonsecondary" size="hero" asChild className="rounded-2xl text-sm">
+                                <Link href={button2link}>{button2text}</Link>
                             </Button>
                         </Reveal>
                     </div>

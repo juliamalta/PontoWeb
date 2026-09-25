@@ -32,7 +32,7 @@ function Card1({ cards, titlePrimary, title, desc }: CardSectionProps) {
                     )}
                 </div>
 
-                <div className='w-full'>
+                <div className="w-full">
                     <div className="grid grid-cols-1 gap-8 sm:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3">
                         {cards?.map((card, index) => (
                             <Reveal key={index} delay={index * 0.12} className="h-full">

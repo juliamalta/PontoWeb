@@ -4,16 +4,17 @@ import { Inter, Plus_Jakarta_Sans } from 'next/font/google'
 
 import '../globals.css'
 
-import { Toaster } from 'sonner'
-import { configs } from '@/configs'
-import { cn } from '@/lib/utils'
-import LogoImage from '../../../public/images/logo.png'
-
-import NavigationHeader from '@/components/sections/Navigations/NavigationHeader'
-import { Footer } from '@/components/sections/Footer'
+import { CiMail, CiPhone } from 'react-icons/ci'
 import { IoLocationOutline } from 'react-icons/io5'
 import { TfiMapAlt } from 'react-icons/tfi'
-import { CiMail, CiPhone } from 'react-icons/ci'
+import { Toaster } from 'sonner'
+
+import { Footer } from '@/components/sections/Footer'
+import NavigationHeader from '@/components/sections/Navigations/NavigationHeader'
+import { configs } from '@/configs'
+import { cn } from '@/lib/utils'
+
+import LogoImage from '../../../public/images/logo.png'
 
 const inter = Inter({
     subsets: ['latin'],

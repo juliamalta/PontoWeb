@@ -1,3 +1,9 @@
+import { mongooseAdapter } from '@payloadcms/db-mongodb'
+import { lexicalEditor } from '@payloadcms/richtext-lexical'
+import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
+import { buildConfig } from 'payload'
+import sharp from 'sharp'
+
 import { Cards1 } from '@/collections/Cards1'
 import { Contact1 } from '@/collections/Contact1'
 import { Features1 } from '@/collections/Features1'
@@ -6,10 +12,6 @@ import { Hero } from '@/collections/Hero'
 import { Media } from '@/collections/Media'
 import { TrustedCompanies } from '@/collections/TrustedCompanies'
 import { Users } from '@/collections/Users'
-import { mongooseAdapter } from '@payloadcms/db-mongodb'
-import { lexicalEditor } from '@payloadcms/richtext-lexical'
-import { buildConfig } from 'payload'
-import sharp from 'sharp'
 
 export default buildConfig({
     secret: process.env.PAYLOAD_SECRET || '',
@@ -25,9 +27,11 @@ export default buildConfig({
     admin: {
         user: Users.slug,
         theme: 'dark',
+
         meta: {
             titleSuffix: ' | PontoWeb',
         },
+
         components: {
             graphics: {
                 Logo: '@/components/admin/Branding#AdminLogo',
@@ -35,6 +39,18 @@ export default buildConfig({
             },
         },
     },
+
+    plugins: [
+        vercelBlobStorage({
+            enabled: true,
+
+            collections: {
+                media: true,
+            },
+
+            token: process.env.BLOB_READ_WRITE_TOKEN,
+        }),
+    ],
 
     sharp,
 })

@@ -1,5 +1,6 @@
-import { CardFeaturesProps } from '@/components/core/CardFeatures/CardFeatures.types'
 import { LuAlignHorizontalJustifyStart } from 'react-icons/lu'
+
+import { CardFeaturesProps } from '@/components/core/CardFeatures/CardFeatures.types'
 
 function CardFeatures1({ title, desc, icon }: CardFeaturesProps) {
     return (

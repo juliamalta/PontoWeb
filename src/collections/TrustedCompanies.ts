@@ -40,16 +40,16 @@ export const TrustedCompanies: CollectionConfig = {
                         { label: 'Hexágono', value: 'hexagon' },
                     ],
                 },
-              {
-    name: 'img',
-    label: 'Logo da empresa',
-    type: 'upload',
-    relationTo: 'media',
-    required: false,
-    admin: {
-        description: 'Envie uma imagem para substituir o logo ilustrativo.',
-    },
-},
+                {
+                    name: 'img',
+                    label: 'Logo da empresa',
+                    type: 'upload',
+                    relationTo: 'media',
+                    required: false,
+                    admin: {
+                        description: 'Envie uma imagem para substituir o logo ilustrativo.',
+                    },
+                },
                 { name: 'alt', label: 'Descrição do logo', type: 'text', required: true },
                 { name: 'width', label: 'Largura do logo', type: 'number', min: 1, required: true },
             ],

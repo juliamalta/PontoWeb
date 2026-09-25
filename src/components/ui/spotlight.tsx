@@ -1,6 +1,7 @@
 'use client'
 
 import { useCallback, useEffect, useRef, useState } from 'react'
+
 import { cn } from '@/lib/utils'
 
 export interface SpotlightBackgroundProps {
@@ -186,7 +187,7 @@ export function SpotlightBackground({
             {/* Vignette */}
 
             {/* Content layer */}
-            {children && <div className="relative z-10 h-full w-full">{children}</div>}
+            {children && <div className="relative z-10 size-full">{children}</div>}
         </div>
     )
 }

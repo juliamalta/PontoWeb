@@ -1,18 +1,17 @@
-import { getPayload } from 'payload'
 import config from '@payload-config'
-
+import { getPayload } from 'payload'
 import type { IconType } from 'react-icons'
 import { CiMobile1 } from 'react-icons/ci'
 import { MdOutlineColorize } from 'react-icons/md'
 import { TbWorld } from 'react-icons/tb'
 
+import { AuroraText } from '@/components/magicui/aurora-text'
 import Cards1 from '@/components/sections/Cards/Cards1'
 import Contact1 from '@/components/sections/Contact/Contact1'
 import Features1 from '@/components/sections/Features/Features1'
 import Features2 from '@/components/sections/Features/Features2'
 import { HeroSection } from '@/components/sections/hero-section'
 import { TrustedCompanies } from '@/components/sections/trusted-companies'
-import { AuroraText } from '@/components/magicui/aurora-text'
 import {
     cards1Defaults,
     contact1Defaults,
