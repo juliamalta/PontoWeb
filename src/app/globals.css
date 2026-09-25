@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
+}
+
+@layer base {
+    :root {
+        --background: 0 0% 100%;
+        --foreground: 240 10% 3.9%;
+        --card: 0 0% 100%;
+        --card-foreground: 240 10% 3.9%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 240 10% 3.9%;
+        --primary: 240 5.9% 10%;
+        --primary-foreground: 0 0% 98%;
+        --secondary: 240 4.8% 95.9%;
+        --secondary-foreground: 240 5.9% 10%;
+        --muted: 240 4.8% 95.9%;
+        --muted-foreground: 240 3.8% 46.1%;
+        --accent: 240 4.8% 95.9%;
+        --accent-foreground: 240 5.9% 10%;
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 240 5.9% 90%;
+        --input: 240 5.9% 90%;
+        --ring: 240 10% 3.9%;
+        --chart-1: 12 76% 61%;
+        --chart-2: 173 58% 39%;
+        --chart-3: 197 37% 24%;
+        --chart-4: 43 74% 66%;
+        --chart-5: 27 87% 67%;
+        --radius: 0.5rem;
+
+        /* Brand colors */
+
+        --cod-gray-50: #fafafa;
+        --cod-gray-100: #f5f5f5;
+        --cod-gray-200: #e6e6e6;
+        --cod-gray-300: #d3d3d3;
+        --cod-gray-400: #a3a3a3;
+        --cod-gray-500: #727272;
+        --cod-gray-600: #535353;
+        --cod-gray-700: #404040;
+        --cod-gray-800: #272727;
+        --cod-gray-900: #1a1a1a;
+        --cod-gray-950: #111111; /* color   */
+
+        --denim-50: #ecf8ff;
+        --denim-100: #d5eeff;
+        --denim-200: #b5e3ff;
+        --denim-300: #82d3ff;
+        --denim-400: #47baff;
+        --denim-500: #1d9aff;
+        --denim-600: #057fff;
+        --denim-700: #006bf6;
+        --denim-800: #075ad2; /* color   */
+        --denim-900: #0d4b9b;
+        --denim-950: #0d2e5e;
+
+        --shuttle-gray-50: #f9fafb;
+        --shuttle-gray-100: #f2f4f7;
+        --shuttle-gray-200: #e4e7ec;
+        --shuttle-gray-300: #cfd5dd;
+        --shuttle-gray-400: #98a2b3;
+        --shuttle-gray-500: #5d6677; /* color   */
+        --shuttle-gray-600: #475567;
+        --shuttle-gray-700: #324056;
+        --shuttle-gray-800: #1b293b;
+        --shuttle-gray-900: #0d172b;
+        --shuttle-gray-950: #000615;
+
+        --woodsmoke-50: #fafafa;
+        --woodsmoke-100: #f5f5f5;
+        --woodsmoke-200: #e6e6e6;
+        --woodsmoke-300: #d3d3d3;
+        --woodsmoke-400: #a3a3a3;
+        --woodsmoke-500: #727272;
+        --woodsmoke-600: #535353;
+        --woodsmoke-700: #404040;
+        --woodsmoke-800: #272727;
+        --woodsmoke-900: #151515; /* color   */
+        --woodsmoke-950: #0b0b0b;
+
+        --french-gray-50: #fafafa;
+        --french-gray-100: #f4f4f5;
+        --french-gray-200: #e4e4e7;
+        --french-gray-300: #c6c6cc; /* color   */
+        --french-gray-400: #a0a0ab;
+        --french-gray-500: #70707b;
+        --french-gray-600: #51515c;
+        --french-gray-700: #3f3f46;
+        --french-gray-800: #27272a;
+        --french-gray-900: #18181b;
+        --french-gray-950: #09090b;
+    }
+    .dark {
+        --background: 240 10% 3.9%;
+        --foreground: 0 0% 98%;
+        --card: 240 10% 3.9%;
+        --card-foreground: 0 0% 98%;
+        --popover: 240 10% 3.9%;
+        --popover-foreground: 0 0% 98%;
+        --primary: 0 0% 98%;
+        --primary-foreground: 240 5.9% 10%;
+        --secondary: 240 3.7% 15.9%;
+        --secondary-foreground: 0 0% 98%;
+        --muted: 240 3.7% 15.9%;
+        --muted-foreground: 240 5% 64.9%;
+        --accent: 240 3.7% 15.9%;
+        --accent-foreground: 0 0% 98%;
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 240 3.7% 15.9%;
+        --input: 240 3.7% 15.9%;
+        --ring: 240 4.9% 83.9%;
+        --chart-1: 220 70% 50%;
+        --chart-2: 160 60% 45%;
+        --chart-3: 30 80% 55%;
+        --chart-4: 280 65% 60%;
+        --chart-5: 340 75% 55%;
+    }
+    .theme {
+        --animate-aurora: aurora 8s ease-in-out infinite alternate;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+        @layer base {
+            html,
+            body {
+                font-family: var(--font-manrope);
+                width: 100%;
+                overflow-x: clip;
+                min-height: 100vh;
+            }
+        }
+    }
+}
