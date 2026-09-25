@@ -4,15 +4,15 @@ export const menuConfig = [
         link: '#inicio',
     },
     {
-        text: 'Sobre',
-        link: '#sobre',
+        text: 'Soluções',
+        link: '#solution',
     },
     {
         text: 'Serviços',
-        link: '#serviços',
+        link: '#Serviços',
     },
     {
-        text: 'Projetos',
-        link: '#trabalho',
+        text: 'Contato',
+        link: '#contact',
     },
 ]

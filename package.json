@@ -3,18 +3,18 @@
     "version": "0.1.0",
     "type": "module",
     "private": true,
- "scripts": {
-    "dev": "next dev",
-    "start": "node server.js",
-    "server": "nodemon server.js",
-    "build": "yarn run build:ssr",
-    "build:ssr": "next build",
-    "start:ssr": "next start",
-    "build:ftp": "cross-env NEXT_EXPORT=true next build",
-    "lint": "eslint . --fix",
-    "format": "prettier --write .",
-    "prepare": "husky"
-},
+    "scripts": {
+        "dev": "next dev",
+        "start": "node server.js",
+        "server": "nodemon server.js",
+        "build": "yarn run build:ssr",
+        "build:ssr": "next build",
+        "start:ssr": "next start",
+        "build:ftp": "cross-env NEXT_EXPORT=true next build",
+        "lint": "eslint . --fix",
+        "format": "prettier --write .",
+        "prepare": "husky"
+    },
     "dependencies": {
         "@hookform/resolvers": "^3.9.1",
         "@payloadcms/db-mongodb": "^3.90.2",

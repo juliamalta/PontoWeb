@@ -13,7 +13,7 @@ function Contact1({
     buttonLink = 'https://wa.me/5531996398460',
 }: Contact1Props) {
     return (
-        <section id="features" className="relative isolate overflow-hidden bg-color-codgray">
+        <section id="contact" className="relative isolate overflow-hidden bg-color-codgray">
             <AmbientGlow />
             <div className="container relative py-24">
                 <div className="flex flex-col gap-8">

@@ -7,14 +7,8 @@
         "prettier",
         "plugin:import/typescript"
     ],
-    "plugins": [
-        "@typescript-eslint",
-        "prettier",
-        "eslint-plugin-import-helpers"
-    ],
-    "ignorePatterns": [
-        "src/app/(payload)/admin/importMap.js"
-    ],
+    "plugins": ["@typescript-eslint", "prettier", "eslint-plugin-import-helpers"],
+    "ignorePatterns": ["src/app/(payload)/admin/importMap.js"],
     "rules": {
         "camelcase": "error",
         "no-debugger": "warn",
@@ -41,11 +35,7 @@
             "warn",
             {
                 "newlinesBetween": "always",
-                "groups": [
-                    ["/^react/", "module"],
-                    ["/^@//"],
-                    ["parent", "sibling", "index"]
-                ],
+                "groups": [["/^react/", "module"], ["/^@//"], ["parent", "sibling", "index"]],
                 "alphabetize": {
                     "order": "asc",
                     "ignoreCase": true

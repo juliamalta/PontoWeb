@@ -4,7 +4,7 @@ import CardFeatures1 from '@/components/core/CardFeatures/CardFeatures1'
 import { FeaturesProps } from '@/components/sections/Features/Features.types'
 function Features1({ title, features1, img, titlePrimary }: FeaturesProps) {
     return (
-        <section id="features">
+        <section id="solution">
             <div className="bg-color-woodsmoke">
                 <div className="container py-24">
                     <div className="flex flex-col gap-8">
