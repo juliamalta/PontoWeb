@@ -22,6 +22,7 @@ import {
     features2Defaults,
     trustedCompaniesDefaults,
 } from '@/content/home-defaults'
+import Testimonials1 from '@/components/sections/testimonials/testimonials1'
 
 const cardIcons: Record<string, IconType> = {
     TbWorld,
@@ -164,7 +165,27 @@ export default async function Home() {
                 buttonText={results?.buttonText || features2Defaults.buttonText}
                 buttonLink={results?.buttonLink || features2Defaults.buttonLink}
             />
-
+            <Testimonials1
+                titlePrimary="Depoimentos"
+                title="Resultados que falam por si."
+                testimonial={[
+                    {
+                        name: 'Dr. Marcelo Arantes',
+                        desc: 'A flexibilidade e o rigor técnico transformaram minha disposição diária e composição corporal em 6 meses, conciliando com uma rotina de viagens intensas.',
+                        type: 'Cirurgião & Aluno há 2 anos',
+                    },
+                    {
+                        name: 'Beatriz Sampaio',
+                        desc: 'Treinar com esse nível de privacidade e precisão biomecânica é um divisor de águas. Cada minuto da sessão é focado em resultado real, sem tempo perdido.',
+                        type: 'Diretora Executiva & Aluna há 18 meses',
+                    },
+                    {
+                        name: 'Rodrigo Fontes',
+                        desc: 'O diferencial é a inteligência por trás de cada treino. Menos desgaste desnecessário, muito mais força e estética refinada. Vale cada investimento.',
+                        type: 'Sócio-fundador & Aluno há 3 anos',
+                    },
+                ]}
+            />
             {/* CONTATO */}
             <Contact1
                 titlePrimary={contact?.titlePrimary || contact1Defaults.titlePrimary}
