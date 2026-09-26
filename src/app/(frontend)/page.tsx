@@ -25,6 +25,9 @@ import {
 } from '@/content/home-defaults'
 import Testimonials1 from '@/components/sections/testimonials/testimonials1'
 
+// Read the current CMS content on every request instead of freezing it at build time.
+export const dynamic = 'force-dynamic'
+
 const cardIcons: Record<string, IconType> = {
     TbWorld,
     CiMobile1,
