@@ -54,7 +54,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 <NavigationHeader
                     logo={LogoImage.src}
                     navs={configs.menu}
-                    buttonLink="https://docs.google.com/forms/d/e/1FAIpQLSf7UDEd4o_ll21lRKERe2rf83vGASGW0e1vJukTut4rD1OuPg/viewform"
+                    buttonLink="https://www.instagram.com/pontowebb/"
                 />
                 {children}
                 <Footer
