@@ -74,6 +74,29 @@ export const contact1Defaults = {
     buttonLink: 'https://wa.me/5531996398460',
 }
 
+export const testimonials1Defaults = {
+    titlePrimary: 'Depoimentos',
+    title: 'Resultados que falam por si.',
+    desc: 'Cada projeto é desenvolvido para entregar performance, estabilidade e uma experiência digital que acompanha o crescimento do negócio.',
+    testimonial: [
+        {
+            name: 'Dr. Marcelo Arantes',
+            desc: 'A flexibilidade e o rigor técnico transformaram minha disposição diária e composição corporal em 6 meses, conciliando com uma rotina de viagens intensas.',
+            type: 'Cirurgião & Aluno há 2 anos',
+        },
+        {
+            name: 'Beatriz Sampaio',
+            desc: 'Treinar com esse nível de privacidade e precisão biomecânica é um divisor de águas. Cada minuto da sessão é focado em resultado real, sem tempo perdido.',
+            type: 'Diretora Executiva & Aluna há 18 meses',
+        },
+        {
+            name: 'Rodrigo Fontes',
+            desc: 'O diferencial é a inteligência por trás de cada treino. Menos desgaste desnecessário, muito mais força e estética refinada. Vale cada investimento.',
+            type: 'Sócio-fundador & Aluno há 3 anos',
+        },
+    ],
+}
+
 export const trustedCompaniesDefaults = {
     title: 'Empresas que confiam',
     companyLogos: [

@@ -8,9 +8,11 @@ function Features1({ title, features1, img, titlePrimary }: FeaturesProps) {
             <div className="bg-color-woodsmoke">
                 <div className="container py-24">
                     <div className="flex flex-col gap-8">
-                        <Reveal className="flex flex-col gap-2">
-                            <p className="w-fit rounded-2xl text-base font-bold text-[#075AD2]">{titlePrimary}</p>
-                            <p className="w-full items-center justify-center text-4xl font-semibold text-white lg:text-left 2xl:text-4xl">
+                        <Reveal className="flex flex-col items-center justify-center gap-2 lg:items-start lg:justify-start">
+                            <p className="w-fit rounded-2xl text-center text-base font-bold text-[#075AD2] lg:text-left">
+                                {titlePrimary}
+                            </p>
+                            <p className="w-full items-center justify-center text-center text-4xl font-semibold text-white lg:text-left 2xl:text-4xl">
                                 {title}
                             </p>
                         </Reveal>

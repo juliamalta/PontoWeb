@@ -74,6 +74,7 @@ export interface Config {
         features1: Features1
         cards1: Cards1
         features2: Features2
+        testimonials1: Testimonials1
         contact1: Contact1
         'payload-kv': PayloadKv
         'payload-locked-documents': PayloadLockedDocument
@@ -89,6 +90,7 @@ export interface Config {
         features1: Features1Select<false> | Features1Select<true>
         cards1: Cards1Select<false> | Cards1Select<true>
         features2: Features2Select<false> | Features2Select<true>
+        testimonials1: Testimonials1Select<false> | Testimonials1Select<true>
         contact1: Contact1Select<false> | Contact1Select<true>
         'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>
         'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>
@@ -276,6 +278,24 @@ export interface Features2 {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "testimonials1".
+ */
+export interface Testimonials1 {
+    id: string
+    titlePrimary?: string | null
+    title: string
+    desc?: string | null
+    testimonial: {
+        name: string
+        type?: string | null
+        desc: string
+        id?: string | null
+    }[]
+    updatedAt: string
+    createdAt: string
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "contact1".
  */
 export interface Contact1 {
@@ -340,6 +360,10 @@ export interface PayloadLockedDocument {
         | ({
               relationTo: 'features2'
               value: string | Features2
+          } | null)
+        | ({
+              relationTo: 'testimonials1'
+              value: string | Testimonials1
           } | null)
         | ({
               relationTo: 'contact1'
@@ -527,6 +551,25 @@ export interface Features2Select<T extends boolean = true> {
           }
     buttonText?: T
     buttonLink?: T
+    updatedAt?: T
+    createdAt?: T
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "testimonials1_select".
+ */
+export interface Testimonials1Select<T extends boolean = true> {
+    titlePrimary?: T
+    title?: T
+    desc?: T
+    testimonial?:
+        | T
+        | {
+              name?: T
+              type?: T
+              desc?: T
+              id?: T
+          }
     updatedAt?: T
     createdAt?: T
 }

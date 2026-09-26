@@ -11,6 +11,7 @@ import { Features2 } from '@/collections/Features2'
 import { Hero } from '@/collections/Hero'
 import { Media } from '@/collections/Media'
 import { TrustedCompanies } from '@/collections/TrustedCompanies'
+import { Testimonials1 } from '@/collections/Testimonials1'
 import { Users } from '@/collections/Users'
 
 export default buildConfig({
@@ -22,7 +23,7 @@ export default buildConfig({
 
     editor: lexicalEditor(),
 
-    collections: [Users, Media, Hero, TrustedCompanies, Features1, Cards1, Features2, Contact1],
+    collections: [Users, Media, Hero, TrustedCompanies, Features1, Cards1, Features2, Testimonials1, Contact1],
 
     admin: {
         user: Users.slug,
