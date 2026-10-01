@@ -2,6 +2,16 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
+### Google Analytics
+
+Configure the GA4 measurement ID in the environment before starting or building the app:
+
+```bash
+NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+```
+
+The integration is enabled only when this variable is present and automatically tracks page views.
+
 First, run the development server:
 
 ```bash

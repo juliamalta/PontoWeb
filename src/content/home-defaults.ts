@@ -2,7 +2,7 @@
 export const features1Defaults = {
     titlePrimary: 'SOLUÇÕES DIGITAIS',
     title: 'Inovação em Movimento',
-    img: '/images/img1.png',
+    image: '/images/img1.png',
     features1: [
         {
             title: 'Backend Sólido',

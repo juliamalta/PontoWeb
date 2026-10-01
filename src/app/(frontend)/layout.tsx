@@ -9,6 +9,7 @@ import { IoLocationOutline } from 'react-icons/io5'
 import { TfiMapAlt } from 'react-icons/tfi'
 import { Toaster } from 'sonner'
 
+import { GoogleAnalyticsClient } from '@/components/GoogleAnalyticsClient'
 import { Footer } from '@/components/sections/Footer'
 import NavigationHeader from '@/components/sections/Navigations/NavigationHeader'
 import { configs } from '@/configs'
@@ -42,6 +43,8 @@ const info = [
     },
 ]
 export default function RootLayout({ children }: RootLayoutProps) {
+    const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID
+
     return (
         <html lang="pt-BR" className="scroll-smooth">
             <body
@@ -64,6 +67,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 />
 
                 <Toaster richColors position="top-right" />
+                {gaMeasurementId ? <GoogleAnalyticsClient gaMeasurementId={gaMeasurementId} /> : null}
             </body>
         </html>
     )

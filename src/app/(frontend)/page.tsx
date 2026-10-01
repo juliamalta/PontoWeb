@@ -34,6 +34,15 @@ const cardIcons: Record<string, IconType> = {
     MdOutlineColorize,
 }
 
+function getMediaUrl(media: unknown): string | null {
+    if (typeof media === 'object' && media !== null && 'url' in media) {
+        const url = media.url
+        return typeof url === 'string' && url.length > 0 ? url : null
+    }
+
+    return null
+}
+
 export default async function Home() {
     const payload = await getPayload({ config })
 
@@ -146,11 +155,7 @@ export default async function Home() {
             <Features1
                 titlePrimary={solutions?.titlePrimary || features1Defaults.titlePrimary}
                 title={solutions?.title || features1Defaults.title}
-                img={
-                    typeof solutions?.image === 'object' && solutions.image?.url
-                        ? solutions.image.url
-                        : features1Defaults.img
-                }
+                img={getMediaUrl(solutions?.image) || features1Defaults.image}
                 features1={solutionItems.map((item) => ({
                     ...item,
                     isLast: item.isLast ?? undefined,
