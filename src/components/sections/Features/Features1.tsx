@@ -2,6 +2,7 @@ import { FloatingVisual } from '@/components/animations/FloatingVisual'
 import { Reveal } from '@/components/animations/Reveal'
 import CardFeatures1 from '@/components/core/CardFeatures/CardFeatures1'
 import { FeaturesProps } from '@/components/sections/Features/Features.types'
+import { ImageWithFallback } from '@/components/sections/Features/ImageWithFallback'
 
 const defaultFeaturesImage = '/images/img1.png'
 
@@ -25,15 +26,11 @@ function Features1({ title, features1, img, titlePrimary }: FeaturesProps) {
                                     {/* brilho atrás */}
                                     <div className="absolute -inset-3 rounded-3xl bg-blue-500/20 blur-2xl transition-all duration-500 group-hover:bg-blue-500/30" />
 
-                                    <img
+                                    <ImageWithFallback
                                         className="relative w-full rounded-2xl object-cover transition-transform duration-500 motion-safe:group-hover:scale-[1.02] motion-reduce:transition-none"
                                         src={img || defaultFeaturesImage}
+                                        fallbackSrc={defaultFeaturesImage}
                                         alt="Dashboard de uma plataforma digital"
-                                        onError={(event) => {
-                                            if (event.currentTarget.src.endsWith(defaultFeaturesImage)) return
-
-                                            event.currentTarget.src = defaultFeaturesImage
-                                        }}
                                     />
                                 </FloatingVisual>
                             </Reveal>
