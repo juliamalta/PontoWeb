@@ -49,6 +49,10 @@ export default buildConfig({
                 media: true,
             },
 
+            // Evita que uploads com o mesmo nome compartilhem o mesmo Blob.
+            // Sem isso, substituir ou excluir uma mídia pode quebrar outra referência.
+            addRandomSuffix: true,
+
             token: process.env.BLOB_READ_WRITE_TOKEN,
         }),
     ],
